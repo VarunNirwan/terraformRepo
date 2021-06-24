@@ -1,6 +1,6 @@
 /*
 * Resource Group
-*/
+
 resource "azurerm_resource_group" "azure_rg" {
   name     = var.resource_group_name
   location = var.resource_group_location
@@ -15,10 +15,11 @@ resource "random_id" "randomId" {
 
   byte_length = 8
 }
+*/
 
 /*
 * Storage Account
-*/
+
 resource "azurerm_storage_account" "azure_sa" {
   name                     = "apmm${random_id.randomId.hex}"
   resource_group_name      = azurerm_resource_group.azure_rg.name
@@ -26,10 +27,11 @@ resource "azurerm_storage_account" "azure_sa" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
+*/
 
 /*
 * App Service Plan
-*/
+
 resource "azurerm_app_service_plan" "azure_asp" {
   name                = var.app_service_plan_name
   location            = azurerm_resource_group.azure_rg.location
@@ -42,16 +44,18 @@ resource "azurerm_app_service_plan" "azure_asp" {
   }
 }
 
+
 resource "azurerm_application_insights" "azure_ai" {
   name                = var.application_insight_name
   location            = azurerm_resource_group.azure_rg.location
   resource_group_name = azurerm_resource_group.azure_rg.name
   application_type    = "web"
 }
+*/
 
 /*
 * Function App
-*/
+
 resource "azurerm_function_app" "azure_fa" {
   name                       = var.function_app_name
   location                   = azurerm_resource_group.azure_rg.location
@@ -64,3 +68,4 @@ resource "azurerm_function_app" "azure_fa" {
     APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.azure_ai.instrumentation_key
   }
 }
+*/
