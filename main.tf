@@ -28,6 +28,6 @@ terraform {
 * Resource Group
 */
 resource "azurerm_resource_group" "azure_rg" {
-  name     = "tempVarun"
+  name     = "varunrg"
   location = "West Europe"
 }
