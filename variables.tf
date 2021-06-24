@@ -24,3 +24,13 @@ variable "application_insight_name" {
   type        = string
   description = "Application Insight name in Azure"
 }
+
+variable "app_service_plan_name_wa" {
+  type        = string
+  description = "App Service Plan name in Azure"
+}
+
+variable "app_service_name_wa" {
+  type        = string
+  description = "Web App name in Azure"
+}
