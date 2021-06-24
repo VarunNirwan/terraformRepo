@@ -22,12 +22,3 @@ terraform {
       key = "vnterraform.tfstate"    
   }
 }
-
-
-/*
-* Resource Group
-*/
-resource "azurerm_resource_group" "azure_rg" {
-  name     = "varunrg"
-  location = "West Europe"
-}
