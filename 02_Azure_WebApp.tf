@@ -21,7 +21,7 @@ resource "azurerm_app_service" "azure_wa" {
   name                = var.app_service_name_wa
   location            = azurerm_resource_group.azure_rg.location
   resource_group_name = azurerm_resource_group.azure_rg.name
-  app_service_plan_id = azurerm_app_service_plan.azure_asp.id
+  app_service_plan_id = azurerm_app_service_plan.azure_wap.id
 
   app_settings = {
     "APPINSIGHTS_INSTRUMENTATIONKEY"      = "${azurerm_application_insights.azure_ai.instrumentation_key}"
