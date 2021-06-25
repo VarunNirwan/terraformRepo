@@ -1,5 +1,5 @@
 /*
-* Resource Group
+# Resource Group
 
 resource "azurerm_resource_group" "azure_rg" {
   name     = var.resource_group_name
@@ -15,10 +15,10 @@ resource "random_id" "randomId" {
 
   byte_length = 8
 }
-*/
 
-/*
-* Storage Account
+
+
+# Storage Account
 
 resource "azurerm_storage_account" "azure_sa" {
   name                     = "apmm${random_id.randomId.hex}"
@@ -27,10 +27,10 @@ resource "azurerm_storage_account" "azure_sa" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
-*/
 
-/*
-* App Service Plan
+
+
+ # App Service Plan
 
 resource "azurerm_app_service_plan" "azure_asp" {
   name                = var.app_service_plan_name
@@ -51,10 +51,10 @@ resource "azurerm_application_insights" "azure_ai" {
   resource_group_name = azurerm_resource_group.azure_rg.name
   application_type    = "web"
 }
-*/
 
-/*
-* Function App
+
+
+# Function App
 
 resource "azurerm_function_app" "azure_fa" {
   name                       = var.function_app_name
