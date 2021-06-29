@@ -1,5 +1,5 @@
 
-
+/*
 # App Service Plan
 
 resource "azurerm_app_service_plan" "azure_wap" {
@@ -32,4 +32,4 @@ resource "azurerm_app_service" "azure_wa" {
   }
 }
 
-
+*/
