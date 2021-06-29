@@ -1,5 +1,5 @@
 
-/*
+
 # App Service Plan
 
 resource "azurerm_app_service_plan" "azure_wap" {
@@ -24,6 +24,10 @@ resource "azurerm_app_service" "azure_wa" {
   resource_group_name = azurerm_resource_group.azure_rg.name
   app_service_plan_id = azurerm_app_service_plan.azure_wap.id
 
+  site_config {
+    dotnet_framework_version = "v4.0"
+  }
+
   app_settings = {
     "APPINSIGHTS_INSTRUMENTATIONKEY"      = "${azurerm_application_insights.azure_ai.instrumentation_key}"
     "APPINSIGHTS_PORTALINFO"              = "ASP.NET"
@@ -39,6 +43,10 @@ resource "azurerm_app_service" "azure_wa1" {
   location            = azurerm_resource_group.azure_rg.location
   resource_group_name = azurerm_resource_group.azure_rg.name
   app_service_plan_id = azurerm_app_service_plan.azure_wap.id
+
+  site_config {
+    dotnet_framework_version = "v4.0"
+  }
 
   app_settings = {
     "APPINSIGHTS_INSTRUMENTATIONKEY"      = "${azurerm_application_insights.azure_ai.instrumentation_key}"
@@ -56,6 +64,10 @@ resource "azurerm_app_service" "azure_wa2" {
   resource_group_name = azurerm_resource_group.azure_rg.name
   app_service_plan_id = azurerm_app_service_plan.azure_wap.id
 
+  site_config {
+    dotnet_framework_version = "v4.0"
+  }
+
   app_settings = {
     "APPINSIGHTS_INSTRUMENTATIONKEY"      = "${azurerm_application_insights.azure_ai.instrumentation_key}"
     "APPINSIGHTS_PORTALINFO"              = "ASP.NET"
@@ -63,5 +75,5 @@ resource "azurerm_app_service" "azure_wa2" {
     "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
   }
 }
-*/
+
 

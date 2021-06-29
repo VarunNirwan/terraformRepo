@@ -1,4 +1,4 @@
-/*
+
 # Resource Group
 
 resource "azurerm_resource_group" "azure_rg" {
@@ -26,6 +26,11 @@ resource "azurerm_storage_account" "azure_sa" {
   location                 = azurerm_resource_group.azure_rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
+
+  site_config {
+    dotnet_framework_version = "v4.0"
+  }
+  
 }
 
 
@@ -68,4 +73,4 @@ resource "azurerm_function_app" "azure_fa" {
     APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.azure_ai.instrumentation_key
   }
 }
-*/
+
