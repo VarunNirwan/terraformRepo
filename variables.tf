@@ -54,3 +54,13 @@ variable "eventhub_name" {
   type        = string
   description = "Event hub name in Azure"
 }
+
+variable "cosmosdb_account" {
+  type        = string
+  description = "Cosmos Db account name in Azure"
+}
+
+variable "cosmos_sqldb" {
+  type        = string
+  description = "Cosmos Db sql name in Azure"
+}
