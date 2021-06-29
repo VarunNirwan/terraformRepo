@@ -11,6 +11,9 @@ app_service_name_wa2        = "apmm-demo-kafka"
 
 application_insight_name = "appmm-app-insight"
 
+eventhubnamespace_name = "apmm-eventhubns"
+eventhub_name = "apmm-eventhub"
+
 
 
 

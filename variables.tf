@@ -44,3 +44,13 @@ variable "app_service_name_wa2" {
   type        = string
   description = "Web App name in Azure"
 }
+
+variable "eventhubnamespace_name" {
+  type        = string
+  description = "Eventthub namespace in Azure"
+}
+
+variable "eventhub_name" {
+  type        = string
+  description = "Event hub name in Azure"
+}
