@@ -38,10 +38,6 @@ resource "azurerm_app_service_plan" "azure_asp" {
   resource_group_name = azurerm_resource_group.azure_rg.name
   kind                = "FunctionApp"
 
-    site_config {
-    dotnet_framework_version = "v4.0"
-  }
-
   sku {
     tier = "Dynamic"
     size = "Y1"
@@ -67,6 +63,10 @@ resource "azurerm_function_app" "azure_fa" {
   app_service_plan_id        = azurerm_app_service_plan.azure_asp.id
   storage_account_name       = azurerm_storage_account.azure_sa.name
   storage_account_access_key = azurerm_storage_account.azure_sa.primary_access_key
+
+      site_config {
+    dotnet_framework_version = "v4.0"
+  }
 
   app_settings = {
     APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.azure_ai.instrumentation_key
