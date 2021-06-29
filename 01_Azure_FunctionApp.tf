@@ -64,11 +64,7 @@ resource "azurerm_function_app" "azure_fa" {
   storage_account_name       = azurerm_storage_account.azure_sa.name
   storage_account_access_key = azurerm_storage_account.azure_sa.primary_access_key
 
-      site_config {
-    dotnet_framework_version = "v4.0"
-  }
-
-  app_settings = {
+   app_settings = {
     APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.azure_ai.instrumentation_key
   }
 }
