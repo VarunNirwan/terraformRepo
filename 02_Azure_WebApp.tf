@@ -1,5 +1,5 @@
 
-/*
+
 # App Service Plan
 
 resource "azurerm_app_service_plan" "azure_wap" {
@@ -16,7 +16,7 @@ resource "azurerm_app_service_plan" "azure_wap" {
 
 
 
-# App Service
+# App Service1
 
 resource "azurerm_app_service" "azure_wa" {
   name                = var.app_service_name_wa
@@ -32,4 +32,36 @@ resource "azurerm_app_service" "azure_wa" {
   }
 }
 
-*/
+# App Service2
+
+resource "azurerm_app_service" "azure_wa1" {
+  name                = var.app_service_name_wa1
+  location            = azurerm_resource_group.azure_rg.location
+  resource_group_name = azurerm_resource_group.azure_rg.name
+  app_service_plan_id = azurerm_app_service_plan.azure_wap.id
+
+  app_settings = {
+    "APPINSIGHTS_INSTRUMENTATIONKEY"      = "${azurerm_application_insights.azure_ai.instrumentation_key}"
+    "APPINSIGHTS_PORTALINFO"              = "ASP.NET"
+    "APPINSIGHTS_PROFILERFEATURE_VERSION" = "1.0.0"
+    "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
+  }
+}
+
+# App Service2
+
+resource "azurerm_app_service" "azure_wa2" {
+  name                = var.app_service_name_wa2
+  location            = azurerm_resource_group.azure_rg.location
+  resource_group_name = azurerm_resource_group.azure_rg.name
+  app_service_plan_id = azurerm_app_service_plan.azure_wap.id
+
+  app_settings = {
+    "APPINSIGHTS_INSTRUMENTATIONKEY"      = "${azurerm_application_insights.azure_ai.instrumentation_key}"
+    "APPINSIGHTS_PORTALINFO"              = "ASP.NET"
+    "APPINSIGHTS_PROFILERFEATURE_VERSION" = "1.0.0"
+    "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
+  }
+}
+
+
