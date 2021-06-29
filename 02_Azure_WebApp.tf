@@ -1,5 +1,5 @@
 
-/*
+
 # App Service Plan
 
 resource "azurerm_app_service_plan" "azure_wap" {
@@ -25,7 +25,8 @@ resource "azurerm_app_service" "azure_wa" {
   app_service_plan_id = azurerm_app_service_plan.azure_wap.id
 
   site_config {
-    dotnet_framework_version = "v4.0"
+    #dotnet_framework_version = "v4.0"
+    windows_fx_version = "DOTNETCORE|3.1"
   }
 
   app_settings = {
@@ -45,7 +46,8 @@ resource "azurerm_app_service" "azure_wa1" {
   app_service_plan_id = azurerm_app_service_plan.azure_wap.id
 
   site_config {
-    dotnet_framework_version = "v4.0"
+    #dotnet_framework_version = "v4.0"
+    windows_fx_version = "DOTNETCORE|3.1"
   }
 
   app_settings = {
@@ -65,7 +67,8 @@ resource "azurerm_app_service" "azure_wa2" {
   app_service_plan_id = azurerm_app_service_plan.azure_wap.id
 
   site_config {
-    dotnet_framework_version = "v4.0"
+    #dotnet_framework_version = "v4.0"
+    windows_fx_version = "DOTNETCORE|3.1"
   }
 
   app_settings = {
@@ -75,5 +78,5 @@ resource "azurerm_app_service" "azure_wa2" {
     "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
   }
 }
-*/
+
 
