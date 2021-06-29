@@ -69,3 +69,7 @@ variable "cosmos_collection_name" {
   type        = string
   description = "Cosmos Db sql container name in Azure"
 }
+
+variable "failover_location" {
+  default = "northeurope"
+}
