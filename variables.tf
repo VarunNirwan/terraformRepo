@@ -64,3 +64,8 @@ variable "cosmos_sqldb" {
   type        = string
   description = "Cosmos Db sql name in Azure"
 }
+
+variable "cosmos_collection_name" {
+  type        = string
+  description = "Cosmos Db sql container name in Azure"
+}

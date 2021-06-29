@@ -16,6 +16,7 @@ eventhub_name = "apmm-eventhub"
 
 cosmosdb_account = "apmm-cosmosdbacc"
 cosmos_sqldb = "apmm-cosmosSqldb"
+cosmos_collection_name = "apmm-poc"
 
 
 
