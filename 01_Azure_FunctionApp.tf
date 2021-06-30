@@ -1,4 +1,3 @@
-/*
 # Resource Group
 
 resource "azurerm_resource_group" "azure_rg" {
@@ -68,5 +67,5 @@ resource "azurerm_function_app" "azure_fa" {
     APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.azure_ai.instrumentation_key
   }
 }
-*/
+
 

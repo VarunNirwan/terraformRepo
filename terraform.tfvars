@@ -1,13 +1,14 @@
 resource_group_name      = "apmm-demo-rg"
 resource_group_location  = "West Europe"
 
-app_service_plan_name    = "apmm-demo-service-plan"
-function_app_name        = "apmm-functions"
+app_service_plan_name    = "apmm-func-service-plan"
+function_app_name        = "apmm-fnkafkaProducer"
 
-app_service_plan_name_wa    = "apmm-demo-service-plan_wa"
-app_service_name_wa         = "apmm-demo-generatetoken"
-app_service_name_wa1        = "apmm-demo-eventhub"
-app_service_name_wa2        = "apmm-demo-kafka"
+app_service_plan_name_wa    = "apmm-app-service-plan_wa"
+app_service_name_wa         = "apmm-jwtTokenGenerator"
+app_service_name_wa1        = "apmm-azureEventhubs"
+app_service_name_wa2        = "apmm-azureEventhubsSender"
+app_service_name_wa3        = "apmm-CQRSMediaRKafkaConsumer"
 
 application_insight_name = "appmm-app-insight"
 

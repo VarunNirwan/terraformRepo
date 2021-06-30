@@ -1,4 +1,3 @@
-/*
 resource "azurerm_cosmosdb_account" "acc" {
 
   name                      = var.cosmosdb_account
@@ -37,7 +36,7 @@ resource "azurerm_cosmosdb_sql_container" "coll" {
   database_name       = azurerm_cosmosdb_sql_database.db.name
   partition_key_path  = "/CollId"
 }
-*/
+
 
 
 
