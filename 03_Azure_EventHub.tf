@@ -1,4 +1,4 @@
-/*
+
 resource "azurerm_eventhub_namespace" "azure_eventhubnamespace" {
   name                = var.eventhubnamespace_name
   location            = azurerm_resource_group.azure_rg.location
@@ -15,4 +15,4 @@ resource "azurerm_eventhub" "azure_eventhub" {
   partition_count     = 2
   message_retention   = 1
 }
-*/
+
