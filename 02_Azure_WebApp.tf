@@ -37,7 +37,7 @@ resource "azurerm_app_service" "azure_wa" {
   }
 }
 
-# App Service1
+# App Service1 Varun
 
 resource "azurerm_app_service" "azure_wa1" {
   name                = var.app_service_name_wa1
