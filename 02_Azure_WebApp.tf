@@ -90,7 +90,7 @@ resource "azurerm_app_service" "azure_wa3" {
 
   site_config {
     dotnet_framework_version = "v5.0"
-    #windows_fx_version = "DOTNETCORE|3.1"
+    #windows_fx_version = "DOTNETCORE|3.1 "
   }
 
   app_settings = {
