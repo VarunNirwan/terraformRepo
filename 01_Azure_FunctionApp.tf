@@ -53,7 +53,7 @@ resource "azurerm_application_insights" "azure_ai" {
 
 
 
-# Function App
+# Function App Demo
 
 resource "azurerm_function_app" "azure_fa" {
   name                       = var.function_app_name
