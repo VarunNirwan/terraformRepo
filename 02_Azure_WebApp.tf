@@ -1,5 +1,5 @@
 
-
+/*
 # App Service Plan
 
 resource "azurerm_app_service_plan" "azure_wap" {
@@ -37,7 +37,7 @@ resource "azurerm_app_service" "azure_wa" {
   }
 }
 
-# App Service1
+# App Service1 Varun
 
 resource "azurerm_app_service" "azure_wa1" {
   name                = var.app_service_name_wa1
@@ -100,6 +100,7 @@ resource "azurerm_app_service" "azure_wa3" {
     "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
   }
 }
+*/
 
 
 
