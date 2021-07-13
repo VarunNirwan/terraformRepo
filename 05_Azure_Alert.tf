@@ -20,7 +20,7 @@ resource "azurerm_monitor_metric_alert" "kafka_msg_produced" {
 
   criteria {
     metric_namespace = "Microsoft.Insights/Components"
-    metric_name      = "HeartbeatState"
+    metric_name      = "Servers requests"
     aggregation      = "Count"
     operator         = "GreaterThan"
     threshold        = 0
