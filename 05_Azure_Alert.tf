@@ -15,8 +15,6 @@ resource "azurerm_monitor_metric_alert" "kafka_msg_produced" {
   resource_group_name = azurerm_resource_group.azure_rg.name
   scopes              = [azurerm_application_insights.azure_ai.id]
 
-  enabled = "${var.test_insight_alerts_enabled}"
-
   description = "Whenever the count of kafka msg produced is greater than 10"
 
   criteria {
