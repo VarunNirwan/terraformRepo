@@ -5,7 +5,7 @@ resource "azurerm_monitor_action_group" "main" {
   short_name          = "apmmact"
 
   email_receiver {
-    name          = "sendtovarun"
+    name          = "SendEmailToVarun"
     email_address = "nirwan.varun@gmail.com"
   }
 }
