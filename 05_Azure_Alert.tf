@@ -18,9 +18,13 @@ resource "azurerm_monitor_metric_alert" "kafka_msg_produced" {
 
   description = "Whenever the count of kafka msg produced is greater than 10"
 
+  #target_resource_type      = "Microsoft.Insights/Components"
+  #target_resource_location  = var.resource_group_location
+
   criteria {
-    metric_namespace = "Microsoft.Insights/Components"
-    metric_name      = "Servers requests"
+    #metric_namespace = "azure.applicationinsights"
+    metric_namespace = "microsoft.insights/components"
+    metric_name      = "exceptions/server"
     aggregation      = "Count"
     operator         = "GreaterThan"
     threshold        = 0
