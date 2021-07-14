@@ -10,7 +10,7 @@ resource "azurerm_monitor_action_group" "main" {
   }
 }
 
-# Alert updated   
+# Alert updated   demo
 resource "azurerm_monitor_metric_alert" "kafka_msg_produced" {
   name                = "KafkaIncomingMsg"
   resource_group_name = azurerm_resource_group.azure_rg.name
