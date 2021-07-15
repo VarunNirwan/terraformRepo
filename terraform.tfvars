@@ -1,5 +1,5 @@
 resource_group_name      = "rg_projlcl_iac"
-resource_group_location  = "East US"
+resource_group_location  = "Central US"
 
 app_service_plan_name    = "apmm-func-service-plan"
 function_app_name        = "apmm-fnKafkaProducer"
