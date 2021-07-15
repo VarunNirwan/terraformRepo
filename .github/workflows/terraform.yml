@@ -63,10 +63,10 @@ jobs:
 
     
     env:
-      ARM_CLIENT_ID: ${{secrets.ARM_CLIENT_ID}}   
-      ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET}} 
-      ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
-      ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
+      ARM_CLIENT_ID: ${{secrets.ARM_CLIENT_ID_IAC}}   
+      ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET_IAC}} 
+      ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID_IAC}}
+      ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID_IAC}}
 
     steps:
     # Checkout the repository to the GitHub Actions runner
