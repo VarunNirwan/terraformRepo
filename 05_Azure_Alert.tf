@@ -11,12 +11,12 @@ resource "azurerm_monitor_action_group" "main" {
 }
 
 # Alert updated   demo
-resource "azurerm_monitor_metric_alert" "kafka_msg_produced" {
-  name                = "KafkaIncomingMsg"
+resource "azurerm_monitor_metric_alert" "serverexception" {
+  name                = "ServerException"
   resource_group_name = azurerm_resource_group.azure_rg.name
   scopes              = [azurerm_application_insights.azure_ai.id]
 
-  description = "Whenever the count of kafka msg produced is greater than 10"
+  description = "Whenever the count of server execption produced is greater than 10"
 
   #target_resource_type      = "Microsoft.Insights/Components"
   #target_resource_location  = var.resource_group_location
@@ -27,7 +27,7 @@ resource "azurerm_monitor_metric_alert" "kafka_msg_produced" {
     metric_name      = "exceptions/server"
     aggregation      = "Count"
     operator         = "GreaterThan"
-    threshold        = 0
+    threshold        = 10
 
   }
 

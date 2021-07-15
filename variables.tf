@@ -45,10 +45,10 @@ variable "app_service_name_wa2" {
   description = "Web App name in Azure"
 }
 
-variable "app_service_name_wa3" {
+/*variable "app_service_name_wa3" {
   type        = string
   description = "Web App name in Azure"
-}
+}*/
 
 variable "eventhubnamespace_name" {
   type        = string

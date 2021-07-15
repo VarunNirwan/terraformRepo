@@ -37,8 +37,8 @@ resource "azurerm_app_service" "azure_wa" {
   }
 }
 
-# App Service1 Varun
-/*
+# App Service1
+
 resource "azurerm_app_service" "azure_wa1" {
   name                = var.app_service_name_wa1
   location            = azurerm_resource_group.azure_rg.location
@@ -59,7 +59,7 @@ resource "azurerm_app_service" "azure_wa1" {
 }
 
 # App Service2
-
+/*
 resource "azurerm_app_service" "azure_wa2" {
   name                = var.app_service_name_wa2
   location            = azurerm_resource_group.azure_rg.location
@@ -78,12 +78,13 @@ resource "azurerm_app_service" "azure_wa2" {
     "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
   }
 }
+*/
 
 
 # App Service3
 
-resource "azurerm_app_service" "azure_wa3" {
-  name                = var.app_service_name_wa3
+resource "azurerm_app_service" "azure_wa2" {
+  name                = var.app_service_name_wa2
   location            = azurerm_resource_group.azure_rg.location
   resource_group_name = azurerm_resource_group.azure_rg.name
   app_service_plan_id = azurerm_app_service_plan.azure_wap.id
@@ -100,7 +101,7 @@ resource "azurerm_app_service" "azure_wa3" {
     "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
   }
 }
-*/
+
 
 
 
