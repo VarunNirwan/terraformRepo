@@ -15,9 +15,9 @@ application_insight_name = "appmm-app-insight"
 eventhubnamespace_name = "apmm-eventhubns"
 eventhub_name = "apmm-eventhub"
 
-cosmosdb_account = "apmm-cosmosdbacc"
-cosmos_sqldb = "apmm-cosmosSqldb"
-cosmos_collection_name = "apmm-poc"
+cosmosdb_account = "apmm-cosmosdbacc21"
+cosmos_sqldb = "apmm-cosmosSqldb21"
+cosmos_collection_name = "apmm-poc21"
 
 
 
