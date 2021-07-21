@@ -6,7 +6,7 @@ function_app_name        = "apmm-fnKafkaProducer31"
 
 app_service_plan_name_wa    = "apmm-app-service-plan_wa"
 app_service_name_wa         = "apmm-JWTGeneratorToken31"
-app_service_name_wa1        = "apmm-AzureEventHubsProducer13"
+app_service_name_wa1        = "apmm-AzureEventHubsProducer15"
 app_service_name_wa2        = "apmm-KafkaConsumer31"
 #app_service_name_wa3        = "apmm-KafkaConsumer"
 
