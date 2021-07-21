@@ -17,7 +17,7 @@ resource "azurerm_app_service_plan" "azure_wap" {
 
 
 # App Service0
-
+/*
 resource "azurerm_app_service" "azure_wa" {
   name                = var.app_service_name_wa
   location            = azurerm_resource_group.azure_rg.location
@@ -36,6 +36,7 @@ resource "azurerm_app_service" "azure_wa" {
     "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
   }
 }
+*/
 
 # App Service1
 
@@ -82,7 +83,7 @@ resource "azurerm_app_service" "azure_wa2" {
 
 
 # App Service3
-
+/*
 resource "azurerm_app_service" "azure_wa2" {
   name                = var.app_service_name_wa2
   location            = azurerm_resource_group.azure_rg.location
@@ -101,7 +102,7 @@ resource "azurerm_app_service" "azure_wa2" {
     "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
   }
 }
-
+*/
 
 
 

@@ -1,4 +1,5 @@
 # Action Group
+/*
 resource "azurerm_monitor_action_group" "main" {
   name                = "apmm-actiongroup"
   resource_group_name = azurerm_resource_group.azure_rg.name
@@ -35,3 +36,4 @@ resource "azurerm_monitor_metric_alert" "serverexception" {
     action_group_id = "${azurerm_monitor_action_group.main.id}"
   }
 }
+*/

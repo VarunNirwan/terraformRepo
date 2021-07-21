@@ -16,10 +16,10 @@ provider "azurerm" {
 #Terraform backend configuration block
 terraform {
   backend "azurerm" {
-      resource_group_name = "rg_projlcl"
-      storage_account_name = "apmmterraform"
-      #resource_group_name = "githubactionsrg"
-      #storage_account_name = "github21actions"
+      #resource_group_name = "rg_projlcl"
+      #storage_account_name = "apmmterraform"
+      resource_group_name = "githubactionsrg"
+      storage_account_name = "github21actions"
       container_name = "githubactionscontainer"
       key = "vnterraform.tfstate"    
   }
