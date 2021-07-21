@@ -56,13 +56,6 @@ resource "azurerm_app_service" "azure_wa1" {
     #dotnet_framework_version = "v4.0"
     windows_fx_version = "DOTNETCORE|3.1"
   }
-
-  app_settings = {
-    "APPINSIGHTS_INSTRUMENTATIONKEY"      = "${azurerm_application_insights.azure_ai.instrumentation_key}"
-    "APPINSIGHTS_PORTALINFO"              = "ASP.NET"
-    "APPINSIGHTS_PROFILERFEATURE_VERSION" = "1.0.0"
-    "WEBSITE_HTTPLOGGING_RETENTION_DAYS"  = "35"
-  }
 }
 
 # App Service2
