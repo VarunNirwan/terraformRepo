@@ -75,7 +75,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "usernodepool" {
      kubernetes_cluster_id = azurerm_kubernetes_cluster.aks_cluster_1.id
      max_count = 3
      min_count = 1
-     mode = "user"
+     mode = "User"
      name = "user"
      orchestrator_version = data.azurerm_kubernetes_service_versions.current.latest_version
      os_disk_size_gb = 1024
