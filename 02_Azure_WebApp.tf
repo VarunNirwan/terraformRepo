@@ -1,6 +1,6 @@
 
 # Resource Group
-
+/*
 resource "azurerm_resource_group" "azure_rg" {
   name     = var.resource_group_name
   location = var.resource_group_location
@@ -19,7 +19,7 @@ resource "azurerm_app_service_plan" "azure_wap" {
     size = "S1"
   }
 }
-
+*/
 
 
 # App Service0
@@ -45,7 +45,7 @@ resource "azurerm_app_service" "azure_wa" {
 */
 
 # App Service1
-
+/*
 resource "azurerm_app_service" "azure_wa1" {
   name                = var.app_service_name_wa1
   location            = azurerm_resource_group.azure_rg.location
@@ -57,6 +57,7 @@ resource "azurerm_app_service" "azure_wa1" {
     windows_fx_version = "DOTNETCORE|3.1"
   }
 }
+*/
 
 # App Service2
 /*
