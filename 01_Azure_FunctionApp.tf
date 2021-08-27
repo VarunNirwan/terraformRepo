@@ -1,10 +1,10 @@
 # Resource Group
-/*
+
 resource "azurerm_resource_group" "azure_rg" {
   name     = var.resource_group_name
   location = var.resource_group_location
 }
-
+/*
 # Generate random text for a unique storage account name
 resource "random_id" "randomId" {
   keepers = {

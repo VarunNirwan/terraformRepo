@@ -1,4 +1,4 @@
-resource_group_name      = "rg_projlcl_iac"
+resource_group_name      = "rg_logicapp"
 resource_group_location  = "Central US"
 
 app_service_plan_name    = "apmm-func-service-plan"
