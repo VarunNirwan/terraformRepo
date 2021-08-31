@@ -1,0 +1,86 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workflows_logicapp321_name": {
+            "defaultValue": "logicapp321",
+            "type": "string"
+        },
+        "connections_azureblob_1_externalid": {
+            "defaultValue": "/subscriptions/28b43add-147d-4e0a-ab1e-43528d4d9205/resourceGroups/testlogicapp/providers/Microsoft.Web/connections/azureblob-1",
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Logic/workflows",
+            "apiVersion": "2017-07-01",
+            "name": "[parameters('workflows_logicapp321_name')]",
+            "location": "northcentralus",
+            "properties": {
+                "state": "Enabled",
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "manual": {
+                            "type": "Request",
+                            "kind": "Http",
+                            "inputs": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "actions": {
+                        "Create_blob_(V2)": {
+                            "runAfter": {},
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "body": "varunn",
+                                "headers": {
+                                    "ReadFileMetadataFromServer": true
+                                },
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['azureblob']['connectionId']"
+                                    }
+                                },
+                                "method": "post",
+                                "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('logicappstorage21'))}/files",
+                                "queries": {
+                                    "folderPath": "/testlogic",
+                                    "name": "Varun",
+                                    "queryParametersSingleEncoded": true
+                                }
+                            },
+                            "runtimeConfiguration": {
+                                "contentTransfer": {
+                                    "transferMode": "Chunked"
+                                }
+                            }
+                        }
+                    },
+                    "outputs": {}
+                },
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                            "azureblob": {
+                                "connectionId": "[parameters('connections_azureblob_1_externalid')]",
+                                "connectionName": "azureblob-1",
+                                "id": "/subscriptions/28b43add-147d-4e0a-ab1e-43528d4d9205/providers/Microsoft.Web/locations/northcentralus/managedApis/azureblob"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
