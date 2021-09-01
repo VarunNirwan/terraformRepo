@@ -75,6 +75,10 @@ jobs:
       with:
         fetch-depth: 0  
 
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v1.0.2 
+
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
@@ -85,6 +89,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
+      if: contains(steps.changed-files.outputs.modified_files, '07_Azure_LogicApp.tf')
       run: terraform plan
 
       # On push to main, build or change infrastructure according to Terraform configuration files
@@ -93,6 +98,4 @@ jobs:
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve
 
-    - name: Get changed files
-      id: changed-files
-      uses: tj-actions/changed-files@v1.0.2 
+
