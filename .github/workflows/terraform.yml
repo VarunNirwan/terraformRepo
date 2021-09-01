@@ -99,11 +99,11 @@ jobs:
     - name: Terraform Plan
       #if: contains(steps.changed-files.outputs.modified_files, '07_Azure_LogicApp.tf')
       #if: contains(steps.check_files.outputs.listmd, '07_Azure_LogicApp')
-      if: contains( ${{ env.TEMP2 }},  ${{ env.CHANGEDFILE }})
+      if: contains(env.TEMP2, env.CHANGEDFILE)
       run: | 
         terraform plan
         echo ${{ env.TEMP2 }}
-        echo ${{ env.CHANGEDFILE }}
+        echo ${{ env.CHANGEDFILE }}        
       # On push to main, build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
