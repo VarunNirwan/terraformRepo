@@ -79,7 +79,7 @@ jobs:
       id: check_files
       run: |
           echo "=============== list changed files ==============="
-          list = `git diff --name-only HEAD^ HEAD`
+          var=$(git diff --name-only HEAD^ HEAD)
           echo $list
           echo "::set-output name=list::$list"
 
