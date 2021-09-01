@@ -14,6 +14,7 @@ resource "azurerm_app_service_plan" "azure_wap" {
   resource_group_name = azurerm_resource_group.azure_rg.name
   kind                = "Windows"
 
+
   sku {
     tier = "Standard"
     size = "S1"
