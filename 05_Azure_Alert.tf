@@ -11,7 +11,7 @@ resource "azurerm_monitor_action_group" "main" {
   }
 }
 
-# Alert updated   demo
+# Alert updated   demo 
 resource "azurerm_monitor_metric_alert" "serverexception" {
   name                = "ServerException"
   resource_group_name = azurerm_resource_group.azure_rg.name
