@@ -6,7 +6,7 @@ resource "azurerm_eventhub_namespace" "azure_eventhubnamespace" {
   sku                 = "Standard"
   capacity            = 1
 
-}
+} 
 
 resource "azurerm_eventhub" "azure_eventhub" {
   name                = var.eventhub_name

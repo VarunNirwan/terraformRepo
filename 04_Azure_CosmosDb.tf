@@ -12,7 +12,7 @@ resource "azurerm_cosmosdb_account" "acc" {
     consistency_level = "Session"
   }
 
-  geo_location {
+  geo_location { 
     location          = var.failover_location
     failover_priority = 1
      
