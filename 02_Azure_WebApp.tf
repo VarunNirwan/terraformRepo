@@ -12,7 +12,7 @@ resource "azurerm_app_service_plan" "azure_wap" {
   name                = var.app_service_plan_name_wa
   location            = azurerm_resource_group.azure_rg.location
   resource_group_name = azurerm_resource_group.azure_rg.name
-  kind                = "Windows"
+  kind                = "Windows" 
 
 
   sku {

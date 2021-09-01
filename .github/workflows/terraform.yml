@@ -81,10 +81,6 @@ jobs:
           echo "=============== list changed files ==============="
           echo "::set-output name=listmd::$(git diff --name-only --diff-filter=ACMRT HEAD^ HEAD | xargs)"
 
-    - name: name the modified files      
-      run: |
-          echo ${{needs.check_files.outputs.listmd}}     
-
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
