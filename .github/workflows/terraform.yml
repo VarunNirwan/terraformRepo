@@ -89,7 +89,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      if: contains(steps.changed-files.outputs.modified_files, '07_Azure_LogicApp.tf')
+      #if: contains(steps.changed-files.outputs.modified_files, '07_Azure_LogicApp.tf')
       run: terraform plan
 
       # On push to main, build or change infrastructure according to Terraform configuration files
