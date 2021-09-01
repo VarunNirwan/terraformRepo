@@ -75,9 +75,11 @@ jobs:
       with:
         fetch-depth: 0  
 
-    - name: Get changed files
-      id: changed-files
-      uses: tj-actions/changed-files@v1.0.2 
+    - name: check modified files
+      id: check_files
+      run: |
+          echo "=============== list changed files ==============="
+          git diff --name-only HEAD^ HEAD
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform

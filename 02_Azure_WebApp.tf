@@ -18,7 +18,7 @@ resource "azurerm_app_service_plan" "azure_wap" {
   sku {
     tier = "Standard"
     size = "S1"
-  }
+  } 
 }
 */
 
