@@ -17,4 +17,4 @@ resource "azurerm_template_deployment" "terraform-arm" {
  
   deployment_mode = "Incremental"
 }
-
+ 
