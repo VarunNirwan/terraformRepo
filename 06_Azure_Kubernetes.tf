@@ -15,12 +15,13 @@ resource "azurerm_resource_group" "aks_rg_1" {
     name = local.resource_group_name  
 }
 
-# Create a log Analytics Workspace
+# Create a log Analytics Workspace 
 resource "azurerm_log_analytics_workspace" "aks_law_1" {
   name = "logs-${random_pet.aks_random_1.id}"
   location = azurerm_resource_group.aks_rg_1.location
   resource_group_name = azurerm_resource_group.aks_rg_1.name
   retention_in_days = 30
+  
 }
 
 # AKS Version 
