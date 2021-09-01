@@ -17,7 +17,7 @@ resource "azurerm_monitor_metric_alert" "serverexception" {
   resource_group_name = azurerm_resource_group.azure_rg.name
   scopes              = [azurerm_application_insights.azure_ai.id]
 
-  description = "Whenever the count of server execption produced is greater than 10 "
+  description = "Whenever the count of server execption produced is greater than 10  "
 
 
   #target_resource_type      = "Microsoft.Insights/Components"
