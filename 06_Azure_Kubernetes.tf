@@ -11,7 +11,7 @@ resource "random_pet" "aks_random_1" {}
 
 #Create RG
 resource "azurerm_resource_group" "aks_rg_1" {
-    location = local.location
+    location = local.location 
     name = local.resource_group_name  
 }
 
@@ -21,7 +21,7 @@ resource "azurerm_log_analytics_workspace" "aks_law_1" {
   location = azurerm_resource_group.aks_rg_1.location
   resource_group_name = azurerm_resource_group.aks_rg_1.name
   retention_in_days = 30
-  
+
 }
 
 # AKS Version 
