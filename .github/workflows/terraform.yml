@@ -67,6 +67,9 @@ jobs:
       ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET}} 
       ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
       ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
+      TEMP: 07_Azure_LogicApp
+      CHANGEDFILE: 'mvn-3-openjdk-11-slim'
+      TEMP2: '.github/workflows/ci.yaml'
 
     steps:
     # Checkout the repository to the GitHub Actions runner
@@ -95,7 +98,8 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       #if: contains(steps.changed-files.outputs.modified_files, '07_Azure_LogicApp.tf')
-      if: contains(steps.check_files.outputs.listmd, '07_Azure_LogicApp')
+      #if: contains(steps.check_files.outputs.listmd, '07_Azure_LogicApp')
+      if: contains( ${{ env.TEMP2 }},  ${{ env.CHANGEDFILE }})
       run: terraform plan
 
       # On push to main, build or change infrastructure according to Terraform configuration files
