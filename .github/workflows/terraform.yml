@@ -79,7 +79,9 @@ jobs:
       id: check_files
       run: |
           echo "=============== list changed files ==============="
-          echo "::set-output name=list::git diff --name-only HEAD^ HEAD"
+          list = `git diff --name-only HEAD^ HEAD`
+          echo $list
+          echo "::set-output name=list::$list"
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
