@@ -12,7 +12,7 @@ resource "random_pet" "aks_random_1" {}
 #Create RG
 resource "azurerm_resource_group" "aks_rg_1" {
     location = local.location 
-    name = local.resource_group_name  
+    name = local.resource_group_name   
 }
 
 # Create a log Analytics Workspace 
