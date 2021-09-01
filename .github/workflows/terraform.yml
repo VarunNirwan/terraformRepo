@@ -81,6 +81,9 @@ jobs:
           echo "::set-output name=listmd::$(git diff --name-only --diff-filter=ACMRT HEAD^ HEAD | xargs)"
           echo "::set-output name=Modified::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
 
+    - name: echo changed files
+      run: echo ${{steps.check_files.outputs.listmd}}
+
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
