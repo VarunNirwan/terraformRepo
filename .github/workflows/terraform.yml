@@ -79,9 +79,7 @@ jobs:
       id: check_files
       run: |
           echo "=============== list changed files ==============="
-          var=$(git diff --name-only HEAD^ HEAD)
-          echo $list
-          echo "::set-output name=list::$list"
+          echo "::set-output name=list::$(git diff --name-only HEAD^ HEAD)"
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
@@ -94,7 +92,7 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       #if: contains(steps.changed-files.outputs.modified_files, '07_Azure_LogicApp.tf')
-      if: contains(steps.check_files.outputs.list, '07_Azure_LogicApp')
+      if: contains(steps.check_files.outputs.list, 'terraform.yml')
       run: terraform plan
 
       # On push to main, build or change infrastructure according to Terraform configuration files
