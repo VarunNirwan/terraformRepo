@@ -71,8 +71,6 @@ jobs:
       ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
       ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
       TEMP: 07_Azure_LogicApp
-      CHANGEDFILE: 'mvn-3-openjdk-11-slim'
-      TEMP2: '.github/workflows/ci.yaml'
 
     steps:
     # Checkout the repository to the GitHub Actions runner
@@ -104,12 +102,12 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       #if: contains(steps.changed-files.outputs.modified_files, '07_Azure_LogicApp.tf')
-      #if: contains(steps.check_files.outputs.listmd, '07_Azure_LogicApp')
-      if: contains(env.TEMP2, env.CHANGEDFILE)
-      run: | 
-        terraform plan
-        echo ${{ env.TEMP2 }}
-        echo ${{ env.CHANGEDFILE }}        
+      if: |
+        contains(steps.check_files.outputs.listmd, '07_Azure_LogicApp')
+          || github.event_name == 'schedule'
+      #if: contains(env.TEMP2, env.CHANGEDFILE)
+      run: terraform plan
+     
       # On push to main, build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
