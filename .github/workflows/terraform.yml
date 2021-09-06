@@ -111,8 +111,7 @@ jobs:
           #|| github.event_name == 'schedule'
           
       if: |
-        (env.TEMP1 && true)
-           || (false && false)      
+        (true && (true || false))      
       #run: terraform plan
       run: echo "Test"
      
